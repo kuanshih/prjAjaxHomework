@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Travel";
+}
+
+<h1>Travel</h1>
+
+<!-- Card -->
+<div class="card">
+    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
+        <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+    </div>
+    <div class="card-body" id="cardtext">
+        <h5 class="card-title" id="cardtitle">Card title</h5>
+        <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+        </p>
+        <a href="#!" class="btn btn-primary">Button</a>
+    </div>
+</div>
+<!-- Card -->
+
+@section Styles{
+
+}
+
+@section Scripts{
+    <script  src="~/datas/travel.js">
+    </script>
+    <script>
+        //console.log(spots)
+        //const datas = spots.map(site =>{
+        //    const {stitle} = site
+        //    return(
+        //        `<h5>${stitle}</h5>`
+        //    )
+        //    $("#cardtext>cardtitle").html(datas.join(""))
+        //})
+    </script>
+
+}
+
