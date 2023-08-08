@@ -6,7 +6,7 @@
 <h1>Travel</h1>
 
 
-<div id="div1" class="float:left, container">
+<div id="div1" class="float:left">
     
 </div>
 
@@ -27,6 +27,11 @@
                 image = site.file.img[0]
             else
             image = site.file.img;
+
+            //if(site.xurl !=null)
+            //    let url = "#";/*site.xurl;*/
+            //else
+            //url ="#";
             
             return `    
             <div class="card">
@@ -41,7 +46,7 @@
                     <p class="card-text">
                         ${site.xbody}
                     </p>
-                    <a href="#!" class="btn btn-primary">Button</a>
+                    <a href="#!" class="btn btn-primary">深入了解</a>
                 </div>
             </div>
                     `
