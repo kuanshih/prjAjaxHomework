@@ -6,8 +6,10 @@
 <h1>Travel</h1>
 
 
-<div id="div1" class="float:left">
-    
+<div class="container">
+    <divc id="div1"  class="row">
+
+    </divc>
 </div>
 
 
@@ -33,7 +35,8 @@
             //else
             //url ="#";
             
-            return `    
+            return ( `
+             <div class="col-md-4">       
             <div class="card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <img src="${image.text}" class="img-fluid" />
@@ -42,14 +45,15 @@
                     </a>
                 </div>
                 <div class="card-body" id="cardtext">
-                            <h5 class="card-title" id="cardtitle">${site.stitle}</h5>
+                    <h5 class="card-title" id="cardtitle">${site.stitle}</h5>
                     <p class="card-text">
                         ${site.xbody}
                     </p>
                     <a href="#!" class="btn btn-primary">深入了解</a>
                 </div>
             </div>
-                    `
+        </div>
+                    `)
         })
      document.querySelector('#div1').innerHTML = datas
         //const datas = spots.map(site =>{
