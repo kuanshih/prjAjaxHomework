@@ -5,34 +5,48 @@
 
 <h1>Travel</h1>
 
-<!-- Card -->
-<div class="card">
-    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid" />
-        <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-    </div>
-    <div class="card-body" id="cardtext">
-        <h5 class="card-title" id="cardtitle">Card title</h5>
-        <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-        </p>
-        <a href="#!" class="btn btn-primary">Button</a>
-    </div>
+
+<div id="div1" class="float:left, container">
+    
 </div>
-<!-- Card -->
+
 
 @section Styles{
 
 }
 
 @section Scripts{
-    <script  src="~/datas/travel.js">
+    <script  src="~/datas/travel.js" >
     </script>
     <script>
-        //console.log(spots)
+        console.log(spots)
+        
+        const datas = spots.CommonFormat.Section.map(site =>{
+            let image =null;
+            if(site.file.img.length>0)
+                image = site.file.img[0]
+            else
+            image = site.file.img;
+            
+            return `    
+            <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="${image.text}" class="img-fluid" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body" id="cardtext">
+                            <h5 class="card-title" id="cardtitle">${site.stitle}</h5>
+                    <p class="card-text">
+                        ${site.xbody}
+                    </p>
+                    <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+            </div>
+                    `
+        })
+     document.querySelector('#div1').innerHTML = datas
         //const datas = spots.map(site =>{
         //    const {stitle} = site
         //    return(
