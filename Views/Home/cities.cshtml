@@ -5,10 +5,10 @@
 
 <h1>cities</h1>
 <div>
-    <select>
+    <select id="sle1"> 
     </select>
 </div>
-<span></span>
+<span id="span1" class="alert-info"></span>
 
 
 @section Styles{
@@ -19,15 +19,17 @@
 
 @section Scripts{
     <script>
+        const selCity = document.querySelector("#sle1")
+        const s = document.querySelector("#span1")
         const cities = ["台北市", "新北市", "桃園市", "台中市", "台南市", "高雄市"]
 
         const data =cities.map(index=>{
-            return `<option id="i">${index}</option>`
+            return `<option id="i" value="${index}">${index}</option>`
         });
 
         document.querySelector('select').innerHTML = data;
         //todo...
-        $("option").
+        selCity.addEventListener('change',()=>s.textContent = selCity.value)
         
 
 

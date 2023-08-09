@@ -7,14 +7,13 @@
 
 
 <div class="container">
-    <divc id="div1"  class="row">
+    <divc id="div1"  class="row gy-4">
 
     </divc>
 </div>
 
 
 @section Styles{
-
 }
 
 @section Scripts{
@@ -30,32 +29,32 @@
             else
             image = site.file.img;
 
-            //if(site.xurl !=null)
-            //    let url = "#";/*site.xurl;*/
-            //else
-            //url ="#";
+            if(site.xurl !=null)
+                var url =site.xurl;
+            else
+            url ="#!";
             
-            return ( `
-             <div class="col-md-4">       
-            <div class="card">
+            return  `
+                     <div class="col-md-4 d-flex align-items-stretch " >
+                    <div class="card" >
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <img src="${image.text}" class="img-fluid" />
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                     </a>
                 </div>
-                <div class="card-body" id="cardtext">
+                <div class="card-body" id="cardtext" >
                     <h5 class="card-title" id="cardtitle">${site.stitle}</h5>
                     <p class="card-text">
                         ${site.xbody}
                     </p>
-                    <a href="#!" class="btn btn-primary">深入了解</a>
+                    <a href="${url}" class="btn btn-primary">深入了解</a>
                 </div>
             </div>
         </div>
-                    `)
+                    `
         })
-     document.querySelector('#div1').innerHTML = datas
+     document.querySelector('#div1').innerHTML = datas.join("")
         //const datas = spots.map(site =>{
         //    const {stitle} = site
         //    return(
@@ -64,6 +63,5 @@
         //    $("#cardtext>cardtitle").html(datas.join(""))
         //})
     </script>
-
 }
 

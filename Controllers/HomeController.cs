@@ -28,6 +28,11 @@ namespace prjAjaxHomework.Controllers
             return View(); 
         }
 
+        public IActionResult Address()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
